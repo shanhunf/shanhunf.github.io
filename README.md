@@ -45,26 +45,20 @@ All commands are run from the root of the project, from a terminal:
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-
 # Vinyl Collection Tracker
 
 ## Project Overview
-This project is a front-end web application built as part of a web development module.  
-It allows users to manage a personal vinyl record collection, search for albums using a third-party music API, and track listening frequency over time.
+This project is a web application that allows users to manage and track their personal vinyl record collection. Users can view their collection, explore records, and track listening habits over time.
 
-## Project Goals
-- Build a responsive, accessible front-end application
-- Use semantic HTML and modern CSS layout techniques
-- Implement client-side JavaScript for interactivity and data handling
-- Demonstrate progressive development through version control (Git)
+## Goals
+- Build a responsive, user-friendly interface
+- Learn modern front-end development using Astro
+- Demonstrate continuous development using GitHub version control
 
-## Technologies
-- HTML
-- CSS
-- JavaScript
-- Astro (static site framework)
-- Git & GitHub
+## Technologies Used
+- Astro
+- HTML, CSS, JavaScript
+- GitHub for version control
 
-## Development Status
-- Project setup and Astro configuration complete
-- Initial page
+## Status
+This project is under active development as part of a UCD coursework submission.
