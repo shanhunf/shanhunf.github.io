@@ -1,0 +1,21 @@
+---
+/* SIDE NAVIGATION COMPONENT */
+
+const { active } = Astro.props;
+
+---
+<nav class="sidenav">
+  <h2 class="logo">Library</h2>
+
+  <ul class="nav-list">
+    <li class={active === "collection" ? "active" : ""}>
+      My Collection
+    </li>
+    <li class={active === "search" ? "active" : ""}>
+      Search Music
+    </li>
+    <li class={active === "stats" ? "active" : ""}>
+      My Stats
+    </li>
+  </ul>
+</nav>

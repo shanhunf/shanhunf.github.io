@@ -1,0 +1,66 @@
+/* GENERAL PAGE LAYOUT */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #0f0f10;
+  color: white;
+}
+
+
+.page {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* SIDENAV */
+
+.sidenav {
+  background: linear-gradient(180deg, #0f0f10, #161618);
+  padding: 24px;
+}
+
+.logo {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nav-list li {
+  padding: 10px 12px;
+  border-radius: 10px;
+  color: #c7c7c7;
+  cursor: pointer;
+}
+
+.nav-list li.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
+
+/* RESPONSIVE SIDE NAV */
+
+@media (max-width: 768px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 16px;
+  }
+}

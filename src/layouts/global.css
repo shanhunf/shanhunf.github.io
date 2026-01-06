@@ -1,0 +1,95 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: #0f0f10;
+  color: white;
+}
+
+
+.page {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: 100vh;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+}
+
+/*
+  SIDENAV STYLES
+*/
+
+.sidenav {
+  height: 100vh;
+  padding: 24px;
+  background: linear-gradient(
+    180deg,
+    #0f0f10 0%,
+    #161618 100%
+  );
+  display: flex;
+  flex-direction: column;
+}
+
+/* Title */
+.sidenav .logo {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+/* Subtitle */
+.sidenav .subtitle {
+  font-size: 12px;
+  color: #9b9b9b;
+  margin-bottom: 32px;
+}
+
+/* Nav list */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Nav item */
+.nav-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 10px 12px;
+  border-radius: 10px;
+
+  font-size: 14px;
+  color: #c7c7c7;
+  cursor: pointer;
+
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover */
+.nav-list li:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Active item */
+.nav-list li.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+}
