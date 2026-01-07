@@ -10,10 +10,14 @@ import AlbumCard from "../components/AlbumCard.astro";
 <Layout title="My Collection">
   <Sidenav active="collection" /> 
 
-  <main class="content">  <!-- Main is where the search bar and album covers will live, its the second column -->
+ <main class="content">
+  <section class="content-body">
 
-    <SearchBar placeholder= "Search my Collection ..." />
-    <section class="album-grid">
+    <header class="content-header">
+      <SearchBar placeholder="Search my Collection ..." />
+    </header>
+    
+    <div class="album-grid">
   
         <AlbumCard
     title="Eternal Sunshine (Deluxe)"
@@ -228,6 +232,7 @@ import AlbumCard from "../components/AlbumCard.astro";
     cover="https://musiczone.ie/wp-content/uploads/2019/01/WB.jpg"
     status="Listened today"
   />
+    </div>
 </section>
 
    
