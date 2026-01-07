@@ -1,0 +1,23 @@
+---
+const {
+  title = "Album Title",
+  artist = "Artist Name",
+  cover = "/assets/placeholder.jpg",
+  status = "Haven’t listened yet"
+} = Astro.props;
+---
+
+<article class="album-card">
+  <div class="album-cover">
+    <img src={cover} alt={`${title} album cover`} />
+
+    <span class="album-status">
+      {status}
+    </span>
+  </div>
+
+  <div class="album-meta">
+    <h3 class="album-title">{title}</h3>
+    <p class="album-artist">{artist}</p>
+  </div>
+</article>
