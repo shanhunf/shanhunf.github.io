@@ -14,7 +14,7 @@ body {
 
 .page {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 300px 1fr;
   min-height: 100vh;
 }
 
@@ -22,16 +22,17 @@ body {
 
 .sidenav {
   background-color: #161618;
-  padding: 24px;
+  padding: 28px 16px;
   display: flex;
   flex-direction: column;
 }
 
 /* Title */
 .logo {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 600;
   margin-bottom: 4px;
+  padding-left: 24px;
 }
 
 /* Subtitle */
@@ -40,56 +41,83 @@ body {
   margin-top: 10px;
   font-size: 16px;
   color: #9b9b9b;
-  margin-bottom: 32px;
+  margin-bottom: 15px;
+  padding-left: 24px;
 }
 
-/* LIST */
+/* NAV LIST */
 
 .nav-list {
   list-style: none;
+  padding: 0;
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 8px;
 }
 
-.nav-list li {
+/* NAV ITEM */
+.nav-item {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 12px;
 
-  padding: 10px 12px;
-  border-radius: 10px;
+  height: 48px;
+  padding-left: 24px;
 
-  font-size: 16px;
-  color: #c7c7c7;
+  color: #cfcfcf;
   cursor: pointer;
-
-  transition:
-    background-color 0.2s ease,
-    color 0.2s ease;
 }
 
-/* ICONS*/
-.nav-list svg {
-  width: 16px;
-  height: 16px;
-  flex-shrink: 0;
+/* Hover State */
+.nav-item::before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  right: 12px;
+  top: 0;
+  bottom: 0;
+
+  border-radius: 14px;
+  background: transparent;
+  transition: background 0.2s ease;
+  z-index: 0;
 }
 
-/* Fill icons */
-.nav-list svg {
-  fill: currentColor;
+/* Hover */
+.nav-item:hover::before {
+  background: rgba(255, 255, 255, 0.06);
 }
 
-/* HOVERSTATE */
-.nav-list li:hover {
-  background-color: rgba(255, 255, 255, 0.05);
+/* Active */
+.nav-item.active::before {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
   color: #ffffff;
 }
 
-.nav-list li.active {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
+/* ICONS */
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  z-index: 1;
+}
+
+.nav-icon svg {
+  width: 20px;  
+  height: 20px;
+  stroke: currentColor;
+  fill: none;
+}
+
+/* LABEL */
+.nav-label {
+  font-size: 16px;
+  z-index: 1;
 }
 
 /* MAIN CONTENT */

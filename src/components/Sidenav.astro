@@ -14,27 +14,42 @@ const { active } = Astro.props;
   <!-- Navigation -->
   <ul class="nav-list">
 
-    <!-- My Collection -->
-    <li class={active === "collection" ? "active" : ""}>
-      <!-- Phosphor: Record -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M64,128a64,64,0,0,1,64-64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M192,128a64,64,0,0,1-64,64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="128" cy="128" r="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
-      <span>My Collection</span>
+   <!-- My Collection -->
+    <li class={`nav-item ${active === "collection" ? "active" : ""}`}>
+      <span class="nav-icon">
+        <!-- From Phosphor Icon: Record -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+          <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-width="16"/>
+          <circle cx="128" cy="128" r="24" fill="none" stroke="currentColor" stroke-width="16"/>
+        </svg>
+      </span>
+      <span class="nav-label">My Collection</span>
     </li>
 
-    <!-- Search Records -->
-<li class={active === "search" ? "active" : ""}>
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="40" y1="64" x2="216" y2="64" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="128" x2="112" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="40" y1="192" x2="128" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><circle cx="184" cy="144" r="32" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><line x1="206.63" y1="166.63" x2="232" y2="192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
-  <span>Search Records</span>
-</li>
+   <!-- Search Records -->
+    <li class={`nav-item ${active === "search" ? "active" : ""}`}>
+      <span class="nav-icon">
+        <!-- Phosphor: Search -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+          <circle cx="112" cy="112" r="80" fill="none" stroke="currentColor" stroke-width="16"/>
+          <line x1="168" y1="168" x2="224" y2="224" stroke="currentColor" stroke-width="16"/>
+        </svg>
+      </span>
+      <span class="nav-label">Search Records</span>
+    </li>
 
 
     <!-- My Stats -->
-    <li class={active === "stats" ? "active" : ""}>
-      <!-- Phosphor: ChartBar -->
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><path d="M33.6,145.5A96,96,0,0,1,96,37.5v72Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/><path d="M128,128.42V32A96,96,0,1,1,45.22,176.64Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"/></svg>
-    
-      </svg>
-      <span>My Stats</span>
+    <li class={`nav-item ${active === "stats" ? "active" : ""}`}>
+      <span class="nav-icon">
+        <!-- Phosphor: Chart -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
+          <line x1="48" y1="224" x2="48" y2="128" stroke="currentColor" stroke-width="16"/>
+          <line x1="112" y1="224" x2="112" y2="80" stroke="currentColor" stroke-width="16"/>
+          <line x1="176" y1="224" x2="176" y2="32" stroke="currentColor" stroke-width="16"/>
+        </svg>
+      </span>
+      <span class="nav-label">My Stats</span>
     </li>
 
   </ul>
