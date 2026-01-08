@@ -1,8 +1,8 @@
 ---
 const {
-  id = "listen-today",
-  label = "Mark as listened today",
-  activeLabel = "Listened today"
+  id,
+  label = "Log Today's Spin",
+  activeLabel = "Listened today",
 } = Astro.props;
 ---
 
@@ -13,35 +13,31 @@ const {
     id={id}
   />
 
-  <span class="log-btn__icon">
-    <!-- CIRCLE -->
-    <svg class="icon icon--empty" viewBox="0 0 24 24" aria-hidden="true">
-      <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.5" />
-    </svg>
+ <span class="log-btn__icon">
+  <!-- Default: circle -->
+  <span class="icon-circle"></span>
 
-    <!-- STAR -->
-    <svg class="icon icon--star" viewBox="0 0 256 256" aria-hidden="true">
-      <path
-        d="M128,189.09l54.72,33.65a8.4,8.4,0,0,0,12.52-9.17l-14.88-62.79
-           48.7-42A8.46,8.46,0,0,0,224.27,94L160.36,88.8,135.74,29.2
-           a8.36,8.36,0,0,0-15.48,0L95.64,88.8,31.73,94
-           a8.46,8.46,0,0,0-4.79,14.83l48.7,42L60.76,213.57
-           a8.4,8.4,0,0,0,12.52,9.17Z"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="16"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-    </svg>
+  <!-- Hover: star -->
+  <svg class="icon-star" viewBox="0 0 256 256" aria-hidden="true">
+    <path
+      d="M128 189.09l54.72 33.65a8.4 8.4 0 0 0 12.52-9.17l-14.88-62.79
+      48.7-42A8.46 8.46 0 0 0 224.27 94L160.36 88.8
+      135.74 29.2a8.36 8.36 0 0 0-15.48 0L95.64 88.8
+      31.73 94a8.46 8.46 0 0 0-4.79 14.83l48.7 42
+      -14.88 62.79a8.4 8.4 0 0 0 12.52 9.17Z"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="14"
+    />
+  </svg>
 
-    <!-- CHECK -->
-    <svg class="icon icon--check" viewBox="0 0 24 24" aria-hidden="true">
-      <path d="M5 12l4 4 10-10" fill="none" stroke="currentColor" stroke-width="2" />
-    </svg>
-  </span>
+  <!-- Selected: check -->
+  <span class="icon-check">✓</span>
+</span>
+
 
   <span class="log-btn__text">
-    {label}
+    <span class="text-default">{label}</span>
+    <span class="text-active">{activeLabel}</span>
   </span>
 </label>

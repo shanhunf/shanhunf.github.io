@@ -236,6 +236,7 @@ html, body{
 .album-cover {
   position: relative;
   width: 100%;
+  padding-bottom: 6px;
 }
 
 .album-cover img {
@@ -251,11 +252,13 @@ html, body{
 }
 
 .album-title {
-  font-size: 14px;
-  font-weight: 600;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+ font-size: 14px;
+ font-weight: normal;
+ color: white;
+
+ white-space: nowrap;
+ overflow: hidden;
+ text-overflow: ellipsis;
 }
 
 .album-artist {
@@ -269,32 +272,36 @@ html, body{
 
 .log-btn {
   position: absolute;
-  left: 8px;
-  right: 8px;        /* 👈 key change */
-  bottom: 8px;
+  left: 50%;
+  bottom: 12px;
+  transform: translateX(-50%);
 
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center; /* 👈 center everything */
-
   gap: 8px;
-  padding: 8px 12px;
+
   height: 32px;
+  padding: 0 12px;
+  max-width: calc(100% - 16px);
+  width: fit-content;
 
   border-radius: 999px;
-  background: #ffffff;
-  color: #000000;
+  background: #fff;
+  color: #000;
+  border: .5px solid #000;
 
   font-size: 12px;
-  font-weight: 500;
-
+  font-weight: 600;
   cursor: pointer;
+  user-select: none;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.log-btn__text {
-  line-height: 1;
-  white-space: nowrap;
-}
+
 
 .log-btn__checkbox {
   position: absolute;
@@ -302,48 +309,94 @@ html, body{
   pointer-events: none;
 }
 
+/* --------------------- */
+/* ICONS & TEXT  */
+
+.icon-star,
+.icon-check,
+.text-active {
+  display: none;
+}
+
+.icon-circle {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1.5px solid currentColor;
+}
 
 .log-btn__icon {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: 2px solid currentColor;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  width: 18px;
+  height: 18px;
+  display: grid;
+  place-items: center;
 }
 
-.log-btn:hover {
+.icon-star {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-check {
+  font-size: 14px;
+}
+
+.log-btn__text {
+  white-space: nowrap;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.log-btn__icon span,
+.log-btn__icon svg,
+.log-btn__text span {
+  transition: opacity 0.15s ease;
+}
+
+/* --------------------- */
+/* HOVER */
+
+.log-btn:hover:not(:has(.log-btn__checkbox:checked)) {
   background: #000;
   color: #fff;
-  border: 1px solid #fff;
+  border-color: #000;
 }
 
-/* text switching */
-.log-btn__text--active {
+.log-btn:hover:not(:has(.log-btn__checkbox:checked)) .icon-circle {
   display: none;
 }
 
-.log-btn__checkbox:checked ~ .log-btn__text .log-btn__text--default {
+.log-btn:hover:not(:has(.log-btn__checkbox:checked)) .icon-star {
+  display: block;
+}
+
+/* --------------------- */
+/* SELECTED */
+
+.log-btn__checkbox:checked + .log-btn__icon .icon-circle,
+.log-btn__checkbox:checked + .log-btn__icon .icon-star {
   display: none;
 }
 
-.log-btn__checkbox:checked ~ .log-btn__text .log-btn__text--active {
+.log-btn__checkbox:checked + .log-btn__icon .icon-check {
+  display: block;
+}
+
+.log-btn__checkbox:checked ~ .log-btn__text .text-default {
+  display: none;
+}
+
+.log-btn__checkbox:checked ~ .log-btn__text .text-active {
   display: inline;
 }
 
-/* checked icon */
-.log-btn__checkbox:checked ~ .log-btn__icon::after {
-  content: "✓";
-}
-
-/* checked background */
 .log-btn:has(.log-btn__checkbox:checked) {
   background: #7b61ff;
   color: #fff;
   border-color: #7b61ff;
 }
-
 
 
 /* --------------------------------- */

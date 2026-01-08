@@ -4,20 +4,21 @@ import LogBTN from "./logBTN.astro";
 const {
   title,
   artist,
-  cover
+  cover,
+  id,
 } = Astro.props;
 ---
 
-<article class="album-card">
+<div class="album-card">
   <div class="album-cover">
     <img src={cover} alt={`${title} album cover`} />
 
-    <!-- Log button lives ON the image -->
-    <LogBTN />
+    <!-- LOG BUTTON -->
+    <LogBTN id={`log-${id}`} />
   </div>
 
   <div class="album-meta">
-    <h3 class="album-title">{title}</h3>
-    <p class="album-artist">{artist}</p>
+    <div class="album-title">{title}</div>
+    <div class="album-artist">{artist}</div>
   </div>
 </article>
