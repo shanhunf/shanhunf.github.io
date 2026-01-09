@@ -155,6 +155,7 @@ html, body{
   position: sticky;
   top: 0;
   z-index: 10;
+  margin-bottom: 8px;
 
   background-color: #222222;
   padding: 24px 32px;
@@ -219,12 +220,11 @@ html, body{
 /* Album Card or grid*/
 
 .album-grid {
-  align-items: center;
-  height: 48px;
-  padding: 0 30px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 28px;
+
+  padding: 24px 32px 40px;
 }
 
 .album-card {
@@ -361,7 +361,7 @@ html, body{
 .log-btn:hover:not(:has(.log-btn__checkbox:checked)) {
   background: #000;
   color: #fff;
-  border-color: #000;
+  border-color: white;
 }
 
 .log-btn:hover:not(:has(.log-btn__checkbox:checked)) .icon-circle {
@@ -424,3 +424,174 @@ a:focus-visible {
 }
 
 
+/* --------------------------------- */
+/* collection card new styling test  */
+
+/* card container  */
+
+.collection-card {
+  background: #1e1e1e;
+   border-radius: 16px;
+  overflow: hidden;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+  transition: transform 0.2s ease;
+}
+
+.collection-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Image */
+
+.collection-card__image {
+  position: relative;
+}
+
+.collection-card__image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+}
+
+/* Content box */
+
+.collection-card__meta {
+  min-height: 120px;
+  padding: 24px 22px 28px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background: linear-gradient(
+    to bottom,
+    #3b3b3b 0%,
+    #2c2c2c 60%,
+    #242424 100%
+  );
+
+  border-radius: 0 0 22px 22px;
+}
+
+
+/* type */
+
+.collection-card__title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 6px;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.collection-card__artist {
+  font-size: 16px;
+  font-weight: 500;
+  color: #9ca0a8;
+}
+
+/* button */
+
+.collection-btn {
+  position: absolute;
+  z-index: 2;
+  bottom: 20px;
+  left: 16px;
+  right: 16px;
+
+  height: 46px;
+  border-radius: 15px;
+
+
+  background: rgba(255, 255, 255, 0.75);
+  color: #000000;
+  border: 0.642px solid #DEC5FF;
+
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* button text */
+.collection-btn__text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: normal;
+}
+
+.icon-plus {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.icon-check,
+.text-active {
+  display: none;
+}
+
+.collection-btn__checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* hover */
+
+.collection-btn:hover:not(:has(.collection-btn__checkbox:checked)) {
+
+ background: #ffffff;
+  color: #000000;
+  border: 1px;
+
+
+}
+
+
+.collection-btn:has(.collection-btn__checkbox:focus-visible) {
+  outline: 3px solid #7b61ff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px rgba(123, 97, 255, 0.25);
+}
+
+
+/* selected */
+
+.collection-btn__checkbox:checked + .collection-btn__icon .icon-plus {
+  display: none;
+}
+
+.collection-btn__checkbox:checked + .collection-btn__icon .icon-check {
+  display: block;
+}
+
+.collection-btn__checkbox:checked ~ .collection-btn__text .text-default {
+  display: none;
+}
+
+.collection-btn__checkbox:checked ~ .collection-btn__text .text-active {
+  display: inline;
+}
+
+.collection-btn:has(.collection-btn__checkbox:checked) {
+  background: #1f102f;
+  color: #ffffff;
+  border-radius: 16px;
+border: 0.642px solid #DEC5FF;
+}

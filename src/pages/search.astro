@@ -1,0 +1,42 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Sidenav from "../components/Sidenav.astro";
+import SearchBar from "../components/SearchBar.astro";
+import CollectionCard from "../components/CollectionCard.astro";
+---
+
+<Layout title="Search">
+
+  <!-- LEFT COLUMN -->
+  <Sidenav slot="sidenav" active="search" />
+
+  <!-- RIGHT COLUMN -->
+  <main slot="content" class="content">
+    <section class="content-body">
+
+      <!-- SEARCH -->
+      <header class="content-header">
+        <SearchBar placeholder="Search for records..." />
+      </header>
+
+      <!-- RESULTS GRID -->
+      <div class="album-grid">
+        <CollectionCard
+          id="eternal-sunshine"
+          title="Eternal Sunshine (Deluxe)"
+          artist="Ariana Grande"
+          cover="https://m.media-amazon.com/images/I/81y4xBwdRML._AC_UF1000,1000_QL80_.jpg"
+        />
+
+        <CollectionCard
+          id="rumours"
+          title="Rumours"
+          artist="Fleetwood Mac"
+          cover="https://i.scdn.co/image/ab67616d0000b27357df7ce0eac715cf70e519a7"
+        />
+      </div>
+
+    </section>
+  </main>
+
+</Layout>

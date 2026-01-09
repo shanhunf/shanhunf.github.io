@@ -1,0 +1,26 @@
+---
+import ActionButton from "./ActionBTN.astro";
+
+const {
+  title,
+  artist,
+  cover,
+  id,
+} = Astro.props;
+---
+
+<div class="collection-card">
+  <div class="collection-card__image">
+    <img src={cover} alt={`${title} album cover`} />
+
+    <ActionButton
+      id={`collection-${id}`}
+      intent="collection"
+    />
+  </div>
+
+  <div class="collection-card__meta">
+    <div class="collection-card__title">{title}</div>
+    <div class="collection-card__artist">{artist}</div>
+  </div>
+</div>

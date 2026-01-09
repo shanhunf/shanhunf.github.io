@@ -1,0 +1,21 @@
+---
+const { id } = Astro.props;
+---
+
+<label class="collection-btn" for={id}>
+  <input
+    type="checkbox"
+    id={id}
+    class="collection-btn__checkbox"
+  />
+
+  <span class="collection-btn__icon">
+    <span class="icon-plus">+</span>
+    <span class="icon-check">✓</span>
+  </span>
+
+  <span class="collection-btn__text">
+    <span class="text-default">Add to Collection</span>
+    <span class="text-active">Added to Collection</span>
+  </span>
+</label>
