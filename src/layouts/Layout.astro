@@ -1,6 +1,5 @@
 ---
 import "../style/global.css";
-
 const { title = "My Record Shelf" } = Astro.props;
 ---
 <!DOCTYPE html>
@@ -9,13 +8,23 @@ const { title = "My Record Shelf" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <div class="page">
-  <slot name="sidenav" />
-  <slot name="content" />
-</div>
+      <slot name="sidenav" />
+      <slot name="content" />
+    </div>
 
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    ></script>
   </body>
 </html>

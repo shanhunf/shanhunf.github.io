@@ -1,64 +1,61 @@
 ---
-//SIDE NAVIGATION COMPONENT //
-
 const { active } = Astro.props;
-
 ---
-<nav class="sidenav">
-  <!-- Sidebar title -->
-  <h2 class="logo">My Record Shelf</h2>
 
-  <!-- Subtitle (future dynamic data) -->
-  <p class="subtitle">X records in your collection</p>
+<nav class="sidebar p-3">
+  <h2 class="sidebar-title mb-1">My Record Shelf</h2>
+  <p class="sidebar-subtitle mb-4">X records in your collection</p>
 
-  <!-- Nav list-->
-  <ul class="nav-list">
+  <ul class="nav nav-pills flex-column gap-2">
 
-   <!-- My Collection -->
-    <li class={`nav-item ${active === "collection" ? "active" : ""}`}>
-  <a href="/" class="nav-link">
-    <!-- icon -->
-    <span class="nav-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
-        <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-width="16"/>
-        <circle cx="128" cy="128" r="24" fill="none" stroke="currentColor" stroke-width="16"/>
-      </svg>
-    </span>
-    <span class="nav-label">My Collection</span>
-  </a>
-</li>
+    <!-- My Collection -->
+    <li class="nav-item">
+      <a
+        href="/"
+        class={`nav-link sidebar-link d-flex align-items-center gap-3 ${
+          active === "collection" ? "active" : ""
+        }`}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
+          <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-width="16"/>
+          <circle cx="128" cy="128" r="24" fill="none" stroke="currentColor" stroke-width="16"/>
+        </svg>
+        <span>My Collection</span>
+      </a>
+    </li>
 
-<!-- Search Records -->
-<li class={`nav-item ${active === "search" ? "active" : ""}`}>
-  <a href="/search" class="nav-link">
-    <!-- icon -->
-    <span class="nav-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
-        <circle cx="112" cy="112" r="80" fill="none" stroke="currentColor" stroke-width="16"/>
-        <line x1="168" y1="168" x2="224" y2="224" stroke="currentColor" stroke-width="16"/>
-      </svg>
-    </span>
-    <span class="nav-label">Search Records</span>
-  </a>
-</li>
-
-
+    <!-- Search Records -->
+    <li class="nav-item">
+      <a
+        href="/search"
+        class={`nav-link sidebar-link d-flex align-items-center gap-3 ${
+          active === "search" ? "active" : ""
+        }`}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
+          <circle cx="112" cy="112" r="80" fill="none" stroke="currentColor" stroke-width="16"/>
+          <line x1="168" y1="168" x2="224" y2="224" stroke="currentColor" stroke-width="16"/>
+        </svg>
+        <span>Search Records</span>
+      </a>
+    </li>
 
     <!-- Stats -->
-    <li class={`nav-item ${active === "stats" ? "active" : ""}`}>
-  <a href="/stats" class="nav-link">
-    <!-- icon -->
-    <span class="nav-icon">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
-        <line x1="48" y1="224" x2="48" y2="128" stroke="currentColor" stroke-width="16"/>
-        <line x1="112" y1="224" x2="112" y2="80" stroke="currentColor" stroke-width="16"/>
-        <line x1="176" y1="224" x2="176" y2="32" stroke="currentColor" stroke-width="16"/>
-      </svg>
-    </span>
-    <span class="nav-label">My Stats</span>
-  </a>
-</li>
-
+    <li class="nav-item">
+      <a
+        href="/stats"
+        class={`nav-link sidebar-link d-flex align-items-center gap-3 ${
+          active === "stats" ? "active" : ""
+        }`}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
+          <line x1="48" y1="224" x2="48" y2="128" stroke="currentColor" stroke-width="16"/>
+          <line x1="112" y1="224" x2="112" y2="80" stroke="currentColor" stroke-width="16"/>
+          <line x1="176" y1="224" x2="176" y2="32" stroke="currentColor" stroke-width="16"/>
+        </svg>
+        <span>My Stats</span>
+      </a>
+    </li>
 
   </ul>
 </nav>

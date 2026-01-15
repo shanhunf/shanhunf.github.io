@@ -14,25 +14,72 @@ import AlbumCard from "../components/AlbumCard.astro";
   <main slot="content" class="content">
     <section class="content-body">
 
-      <header class="content-header">
-        <SearchBar placeholder="Search my Collection..." />
-      </header>
+      <!-- SEARCH -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <SearchBar placeholder="Search my collection..." />
+        </div>
+      </div>
 
-      <div class="album-grid">
-        <AlbumCard
-        id="eternal-sunshine"
-          title="Eternal Sunshine (Deluxe)"
-          artist="Ariana Grande"
-          cover="https://m.media-amazon.com/images/I/81y4xBwdRML._AC_UF1000,1000_QL80_.jpg"
-        />
+      <!-- ALBUM GRID -->
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
 
-        <AlbumCard
-        id="rumours"
-          title="Rumours"
-          artist="Fleetwood Mac"
-          cover="https://i.scdn.co/image/ab67616d0000b27357df7ce0eac715cf70e519a7"
-        />
-         
+        <div class="col">
+          <AlbumCard
+            title="Eternal Sunshine (Deluxe)"
+            artist="Ariana Grande"
+            cover="https://m.media-amazon.com/images/I/81y4xBwdRML._AC_UF1000,1000_QL80_.jpg"
+          />
+        </div>
+
+        <div class="col">
+          <AlbumCard
+            title="Rumours"
+            artist="Fleetwood Mac"
+            cover="https://i.scdn.co/image/ab67616d0000b27357df7ce0eac715cf70e519a7"
+          />
+        </div>
+
+        <div class="col">
+          <AlbumCard
+            title="Thriller"
+            artist="Michael Jackson"
+            cover="https://i.scdn.co/image/ab67616d0000b273e0b5b4a0d0a7d3d9c7e1c0c6"
+          />
+        </div>
+
+        <div class="col">
+          <AlbumCard
+            title="Back to Black"
+            artist="Amy Winehouse"
+            cover="https://i.scdn.co/image/ab67616d0000b273cfc6f5b3c9e2c4c1d9a6a0c8"
+          />
+        </div>
+
+        <div class="col">
+          <AlbumCard
+            title="Future Nostalgia"
+            artist="Dua Lipa"
+            cover="https://i.scdn.co/image/ab67616d0000b273c7e6a2b5b5d2a8f9c4b1c3e2"
+          />
+        </div>
+
+        <div class="col">
+          <AlbumCard
+            title="Abbey Road"
+            artist="The Beatles"
+            cover="https://i.scdn.co/image/ab67616d0000b273dc30583ba717007b00cceb25"
+          />
+        </div>
+
+        <div class="col">
+          <AlbumCard
+            title="Lemonade"
+            artist="Beyoncé"
+            cover="https://i.scdn.co/image/ab67616d0000b2738b2c7f8c6c2f0a9c1c6b7e9f"
+          />
+        </div>
+
       </div>
 
     </section>

@@ -1,43 +1,22 @@
 ---
-const {
-  id,
-  label = "Log Today's Spin",
-  activeLabel = "Listened today",
-} = Astro.props;
+const { active } = Astro.props;
 ---
-
-<label class="log-btn" for={id}>
-  <input
-    type="checkbox"
-    class="log-btn__checkbox"
-    id={id}
-  />
-
- <span class="log-btn__icon">
-  <!-- Default: circle -->
-  <span class="icon-circle"></span>
-
-  <!-- Hover: star -->
-  <svg class="icon-star" viewBox="0 0 256 256" aria-hidden="true">
-    <path
-      d="M128 189.09l54.72 33.65a8.4 8.4 0 0 0 12.52-9.17l-14.88-62.79
-      48.7-42A8.46 8.46 0 0 0 224.27 94L160.36 88.8
-      135.74 29.2a8.36 8.36 0 0 0-15.48 0L95.64 88.8
-      31.73 94a8.46 8.46 0 0 0-4.79 14.83l48.7 42
-      -14.88 62.79a8.4 8.4 0 0 0 12.52 9.17Z"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="14"
-    />
-  </svg>
-
-  <!-- Selected: check -->
-  <span class="icon-check">✓</span>
-</span>
-
-
-  <span class="log-btn__text">
-    <span class="text-default">{label}</span>
-    <span class="text-active">{activeLabel}</span>
-  </span>
-</label>
+<!-- Default dropup button -->
+<div class="btn-group dropup">
+  <button
+    type="button"
+    class="btn log-btn__trigger dropdown-toggle"
+    data-bs-toggle="dropdown"
+    data-bs-display="static"
+    aria-expanded="false"
+  >
+    Log Listening Activity
+  </button>
+<!-- Dropdown menu links -->
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Log today’s listen</a></li>
+    <li><a class="dropdown-item" href="#">Log previous listen</a></li>
+    <li><hr class="dropdown-divider" /></li>
+    <li><a class="dropdown-item text-danger" href="#">Remove from collection</a></li>
+  </ul>
+</div>

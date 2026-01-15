@@ -5,7 +5,7 @@ import SearchBar from "../components/SearchBar.astro";
 import CollectionCard from "../components/CollectionCard.astro";
 ---
 
-<Layout title="Search">
+<Layout title="Search Records">
 
   <!-- LEFT COLUMN -->
   <Sidenav slot="sidenav" active="search" />
@@ -14,26 +14,34 @@ import CollectionCard from "../components/CollectionCard.astro";
   <main slot="content" class="content">
     <section class="content-body">
 
-      <!-- SEARCH -->
-      <header class="content-header">
-        <SearchBar placeholder="Search for records..." />
-      </header>
+      <!-- SEARCH ROW (same pattern as index) -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <SearchBar placeholder="Search for Records..." />
+        </div>
+      </div>
 
-      <!-- RESULTS GRID -->
-      <div class="album-grid">
-        <CollectionCard
-          id="eternal-sunshine"
-          title="Eternal Sunshine (Deluxe)"
-          artist="Ariana Grande"
-          cover="https://m.media-amazon.com/images/I/81y4xBwdRML._AC_UF1000,1000_QL80_.jpg"
-        />
+      <!-- RESULTS GRID (same grid as index) -->
+      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
 
-        <CollectionCard
-          id="rumours"
-          title="Rumours"
-          artist="Fleetwood Mac"
-          cover="https://i.scdn.co/image/ab67616d0000b27357df7ce0eac715cf70e519a7"
-        />
+        <div class="col">
+          <CollectionCard
+            id="eternal-sunshine"
+            title="Eternal Sunshine (Deluxe)"
+            artist="Ariana Grande"
+            cover="https://m.media-amazon.com/images/I/81y4xBwdRML._AC_UF1000,1000_QL80_.jpg"
+          />
+        </div>
+
+        <div class="col">
+          <CollectionCard
+            id="rumours"
+            title="Rumours"
+            artist="Fleetwood Mac"
+            cover="https://i.scdn.co/image/ab67616d0000b27357df7ce0eac715cf70e519a7"
+          />
+        </div>
+
       </div>
 
     </section>

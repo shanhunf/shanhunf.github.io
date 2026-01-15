@@ -1,24 +1,22 @@
 ---
-import LogBTN from "./logBTN.astro";
+import LogBTN from "./LogBTN.astro";
 
-const {
-  title,
-  artist,
-  cover,
-  id,
-} = Astro.props;
+const { title, artist, cover, id } = Astro.props;
 ---
 
-<div class="album-card">
-  <div class="album-cover">
-    <img src={cover} alt={`${title} album cover`} />
+<div class="card listenalbum-card h-100">
+  <div class="listenalbum-card__image">
+    <img
+      src={cover}
+      alt={`${title} album cover`}
+      onerror="this.onerror=null; this.src='/altrecord.jpeg';"
+    />
 
-    <!-- LOG BUTTON -->
-    <LogBTN id={`log-${id}`} />
+    <LogBTN id={`listen-${id}`} />
   </div>
 
-  <div class="album-meta">
-    <div class="album-title">{title}</div>
-    <div class="album-artist">{artist}</div>
+  <div class="listenalbum-card__meta">
+    <h5 class="listenalbum-card__title">{title}</h5>
+    <p class="listenalbum-card__artist">{artist}</p>
   </div>
-</article>
+</div>
