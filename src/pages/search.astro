@@ -9,22 +9,121 @@ import SearchBar from "../components/SearchBar.astro";
 
   <main slot="content" class="content">
     <section class="content-body">
+
+
       <div class="search-sticky">
-        <div class="row mb-4">
-          <div class="col-12">
-            <SearchBar placeholder="Search for Records..." />
-          </div>
-        </div>
-      </div>
+  <div class="row mb-4">
+    <div class="col-12">
+      <SearchBar placeholder="Search for Records..." />
+    </div>
+  </div>
+</div>
+
 
       <div
         id="results-grid"
         class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4"
       ></div>
+
     </section>
   </main>
 </Layout>
 
 <script>
-  import("../js/search-page.js");
+  import { searchByGenre, searchReleases } from "../js/discogs.js";
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const grid = document.getElementById("results-grid");
+    const input = document.querySelector<HTMLInputElement>(".search-bar input");
+
+    if (!grid || !input) {
+      console.error("Missing grid or input");
+      return;
+    }
+
+    function render(results: any[] | null) {
+      // TypeScript now knows grid exists because we checked above
+      if (!grid) return;
+      
+      grid.innerHTML = "";
+
+      if (!results || !Array.isArray(results)) return;
+
+      results.slice(0, 20).forEach((item: any) => {
+        if (!item.cover_image) return;
+
+        let artist = "Unknown Artist";
+        let album = item.title || "Unknown Album";
+
+        if (album.includes(" - ")) {
+          const parts = album.split(" - ");
+          artist = parts[0] || "Unknown Artist";
+          album = parts[1] || "Unknown Album";
+        }
+
+        grid.innerHTML += `
+          <div class="col">
+            <div class="collection-card h-100">
+              <div class="collection-card__image">
+                <img src="${item.cover_image}" alt="${album}" />
+
+                <label class="collection-btn">
+                  <input type="checkbox" class="collection-btn__checkbox" />
+
+                  <span class="collection-btn__icon">
+                    <span class="icon-plus">+</span>
+                    <span class="icon-check">✓</span>
+                  </span>
+
+                  <span class="collection-btn__text">
+                    <span class="text-default">Add to Collection</span>
+                    <span class="text-active">Added</span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="collection-card__meta">
+                <h5 class="collection-card__title">${album}</h5>
+                <p class="collection-card__artist">${artist}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    async function loadPopular() {
+      try {
+        const rock = await searchByGenre("Rock");
+        const pop = await searchByGenre("Pop");
+        
+        const combined = [
+          ...(rock.results || []), 
+          ...(pop.results || [])
+        ];
+        
+        render(combined);
+      } catch (error) {
+        console.error("Error loading popular albums:", error);
+      }
+    }
+
+    input.addEventListener("input", async () => {
+      const query = input.value.trim();
+
+      if (query === "") {
+        loadPopular();
+        return;
+      }
+
+      try {
+        const data = await searchReleases(query);
+        render(data.results || []);
+      } catch (error) {
+        console.error("Search error:", error);
+      }
+    });
+
+    loadPopular();
+  });
 </script>
