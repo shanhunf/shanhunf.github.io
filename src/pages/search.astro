@@ -2,49 +2,31 @@
 import Layout from "../layouts/Layout.astro";
 import Sidenav from "../components/Sidenav.astro";
 import SearchBar from "../components/SearchBar.astro";
-import CollectionCard from "../components/CollectionCard.astro";
 ---
 
 <Layout title="Search Records">
-
-  <!-- LEFT COLUMN -->
   <Sidenav slot="sidenav" active="search" />
 
-  <!-- RIGHT COLUMN -->
   <main slot="content" class="content">
     <section class="content-body">
 
-      <!-- SEARCH ROW (same pattern as index) -->
-      <div class="row mb-4">
-        <div class="col-12">
-          <SearchBar placeholder="Search for Records..." />
-        </div>
-      </div>
 
-      <!-- RESULTS GRID (same grid as index) -->
-      <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
+      <div class="search-sticky">
+  <div class="row mb-4">
+    <div class="col-12">
+      <SearchBar placeholder="Search for Records..." />
+    </div>
+  </div>
+</div>
 
-        <div class="col">
-          <CollectionCard
-            id="eternal-sunshine"
-            title="Eternal Sunshine (Deluxe)"
-            artist="Ariana Grande"
-            cover="https://m.media-amazon.com/images/I/81y4xBwdRML._AC_UF1000,1000_QL80_.jpg"
-          />
-        </div>
 
-        <div class="col">
-          <CollectionCard
-            id="rumours"
-            title="Rumours"
-            artist="Fleetwood Mac"
-            cover="https://i.scdn.co/image/ab67616d0000b27357df7ce0eac715cf70e519a7"
-          />
-        </div>
-
-      </div>
+      <div
+        id="results-grid"
+        class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4"
+      ></div>
 
     </section>
   </main>
-
 </Layout>
+
+<script type="module" src="/src/js/search-page.js"></script>

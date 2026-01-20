@@ -1,17 +1,38 @@
 ---
-const {placeholder = "Search..."} = Astro.props;
+const { placeholder = "Search..." } = Astro.props;
 ---
 
+<div class="search-bar">
+  <!-- Icon -->
+  <svg
+    class="search-icon"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 256 256"
+    aria-hidden="true"
+  >
+    <circle
+      cx="112"
+      cy="112"
+      r="80"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="16"
+    />
+    <line
+      x1="168.57"
+      y1="168.57"
+      x2="224"
+      y2="224"
+      stroke="currentColor"
+      stroke-width="16"
+      stroke-linecap="round"
+    />
+  </svg>
 
-<div class= "search-bar">
-    <!--Icon -->
-    <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" aria-hidden="true">
-    <circle cx="112" cy= "112" r="80" fill="none" stroke="currentColor" stroke-width="16" />
-    <line x1="168.57" y1="168.57" x2="224" y2="224" stroke="currentColor" stroke-width="16" stroke-linecap="round" />
-    </svg>
-
-
-    <input type="search" placeholder= {placeholder}
-    aria-label= {placeholder} />
+  <input
+    id="search-input"  
+    type="search"
+    placeholder={placeholder}
+    aria-label={placeholder}
+  />
 </div>
-

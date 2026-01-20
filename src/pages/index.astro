@@ -15,11 +15,14 @@ import AlbumCard from "../components/AlbumCard.astro";
     <section class="content-body">
 
       <!-- SEARCH -->
-      <div class="row mb-4">
-        <div class="col-12">
-          <SearchBar placeholder="Search my collection..." />
-        </div>
-      </div>
+      <div class="search-sticky">
+  <div class="row mb-4">
+    <div class="col-12">
+      <SearchBar placeholder="Search for Records..." />
+    </div>
+  </div>
+</div>
+
 
       <!-- ALBUM GRID -->
       <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4">
@@ -86,3 +89,4 @@ import AlbumCard from "../components/AlbumCard.astro";
   </main>
 
 </Layout>
+

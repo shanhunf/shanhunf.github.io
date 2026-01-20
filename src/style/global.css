@@ -22,7 +22,7 @@ body {
 }
 
 .page {
-  display: grid;
+  display: flex;
   grid-template-columns: 300px 1fr;
   height: 100vh;
 }
@@ -33,10 +33,14 @@ body {
 
 .sidebar {
   background: linear-gradient(180deg, #1c1c1e 0%, #121212 100%);
+  width: 260px;
+  height: 100vh;
+  flex-shrink: 0;
+  overflow: hidden;
 }
 
 .sidebar-title {
-  margin-top: 15px;
+  margin-top: 30px;
   font-size: 1.75rem;
   font-weight: 500;
 }
@@ -79,12 +83,18 @@ body {
 
 .content {
   padding: 32px;
-  height: 100%;
+  flex: 1;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
 .content-body {
   height: 100%;
   overflow-y: auto;
+  flex: 1;
+  padding-bottom: 2rem;
 }
 
 .content-header {
@@ -100,16 +110,28 @@ body {
 /* ========================= */
 
 .search-bar {
-  display: flex;
+ display: flex;
   align-items: center;
   gap: 12px;
+
   height: 48px;
   padding: 0 16px;
   width: 100%;
+
   background-color: #2a2a2a;
   border: 1px solid #DEC5FF;
   border-radius: 999px;
-  transition: border-color 0.15s ease;
+
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+.search-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+
+  background-color: #222222; /* prevents see-through */
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .search-bar:hover {
@@ -174,7 +196,7 @@ body {
 }
 
 /* ========================= */
-/* IMAGE */
+/* ALBUM IMAGE */
 /* ========================= */
 
 .position-relative {
@@ -189,7 +211,7 @@ body {
   border-radius: 22px 22px 0 0;
 }
 
-.listenalbum-card__image {
+.listenalbum-card__image, .collection-card__image {
   position: relative;
 }
 
@@ -230,6 +252,7 @@ body {
 .listenalbum-card__image img,
 .collection-card__image img {
   width: 100%;
+  height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
@@ -303,9 +326,7 @@ body {
   display: inline;
 }
 
-.collection-btn__checkbox:checked {
-  background: #1f102f;
-}
+
 
 /* ========================= */
 /* COLLECTION BUTTON — CHECKED STATE */
