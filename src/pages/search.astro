@@ -9,24 +9,22 @@ import SearchBar from "../components/SearchBar.astro";
 
   <main slot="content" class="content">
     <section class="content-body">
-
-
       <div class="search-sticky">
-  <div class="row mb-4">
-    <div class="col-12">
-      <SearchBar placeholder="Search for Records..." />
-    </div>
-  </div>
-</div>
-
+        <div class="row mb-4">
+          <div class="col-12">
+            <SearchBar placeholder="Search for Records..." />
+          </div>
+        </div>
+      </div>
 
       <div
         id="results-grid"
         class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4"
       ></div>
-
     </section>
   </main>
 </Layout>
 
-<script type="module" src="/src/js/search-page.js"></script>
+<script>
+  import("../js/search-page.js");
+</script>
