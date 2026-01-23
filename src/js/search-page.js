@@ -20,18 +20,23 @@ document.addEventListener("DOMContentLoaded", async () => { // Listen for user t
     grid.innerHTML = '';
     albumsArray.slice(0,30).forEach(album => { /* i only want to show 30 albums because i dont want to overload the oage */
 
-
+       const parts = album.title.split(' - ');
+    const artist = parts[0] || 'Unknown Artist'; // I need to split the artist & albumn title because without this artist is being returned as undefined & the artist & album are being displayed in the title, I want them to be on different lines
+    const albumTitle = parts[1] || album.title;
 
 /* easier to use inner html as I couldnt figure out how to import the astro component*/
 
+
+/*  Album card that displays one album with its image and info */
+
   grid.innerHTML += ` 
   <div class="col">
-    <div class="collection-card h-100">
-      <div class="collection-card-image">
-        <img src="${album.cover_image}" alt="${album.title}" />
+    <div class="collection-card h-100"> <!-- using Bootstrap -->
+      <div class="collection-card-image"> <!-- Album cover image -->
+        <img src="${album.cover_image}" alt="${album.title}" /> 
 
-        <!-- ADD TO COLLECTION BUTTON -->
-        <label class="collection-btn">
+        <!-- ADD TO COLLECTION BUTTON --> 
+        <label class="collection-btn"> <!-- called action btn in file because I was getting confused between collection card and collection btn  -->
           <input type="checkbox" class="collection-btn-checkbox" />
 
           <span class="collection-btn-icon">
@@ -47,8 +52,8 @@ document.addEventListener("DOMContentLoaded", async () => { // Listen for user t
       </div>
 
       <div class="collection-card-info">
-        <h5 class="collection-card-title">${album.title}</h5>
-        <p class="collection-card-artist">${album.artist}</p>
+        <h5 class="collection-card-title">${albumTitle}</h5>  <!-- h5 for album title because I want it to be visually bigger  -->
+        <p class="collection-card-artist">${artist}</p> <!-- artist is a paragraph because visually smaller  -->
       </div>
     </div>
   </div>

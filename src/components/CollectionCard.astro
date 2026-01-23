@@ -1,34 +1,32 @@
----
-import ActionBTN from "./ActionBTN.astro";
-
-// This is for the Search Collection page card. Get info from the album card that we will pull from the API
-
-const { title, artist, cover, id } = Astro.props;
----
-
 <!-- Album card that displays one album with its image and info -->
 
-<div class="card collectioncard h-100"> <!-- using Bootstrap -->
-  <div class="collectioncard-image"> <!-- Album cover image -->
+ <div class="col">
+    <div class="collection-card h-100"> <!-- using Bootstrap -->
+      <div class="collection-card-image"><!-- Album cover image -->
+        <img src="${album.cover_image}" alt="${album.title}" />  <!-- adding alt text -->
 
-    <img
-      src={cover}
-      alt={`${title} album cover`}
-      onerror="this.onerror=null; this.src='/altrecord.jpeg';"
-    />
 
-<!-- adding alt text and images -->
-
-    <div class="collectioncard-action"> <!-- this is the collection btn, called action btn in file because I was getting confused between collection card and collection btn  -->
+        <!-- ADD TO COLLECTION BUTTON -->
+        <label class="collection-btn"> <!-- called action btn in file because I was getting confused between collection card and collection btn  -->
   </div>
-      <ActionBTN id={`collection-${id}`} />
+          <input type="checkbox" class="collection-btn-checkbox" /> 
+
+          <span class="collection-btn-icon">
+            <span class="icon-plus">+</span>
+            <span class="icon-check">✓</span>
+          </span>
+
+          <span class="collection-btn__text">
+            <span class="text-default">Add to Collection</span>
+            <span class="text-active">Added</span>
+          </span>
+        </label>
+      </div>
+
+      <div class="collection-card-info">
+        <h5 class="collection-card-title">${}</h5>  <!-- h5 for album title because I want it to be visually bigger  -->
+        <p class="collection-card-artist">${}</p> <!-- artist is a paragraph because visually smaller  -->
+      </div>
     </div>
-
   </div>
-
-  <div class="collectioncard-info">
-    <h5 class="collectioncard-albumname">{title}</h5>  <!-- h5 for album title because I want it to be visually bigger  -->
-    <p class="collectioncard-artist">{artist}</p> <!-- artist is a paragraph because visually smaller  -->
-  </div>
-</div>
-
+`;
