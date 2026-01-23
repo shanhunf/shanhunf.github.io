@@ -1,20 +1,23 @@
 ---
+// giving button its own name tag 
 const { id } = Astro.props;
 ---
 
-<label class="collection-btn" for={id}>
+<!-- This is the button that lets users add albums to their collection -->
+<label class="collection-btn" for={id}> <!-- ID helps to remember the user clicked it necause it will be used for localstorage for my collection -->
   <input
     type="checkbox"
     id={id}
-    class="collection-btn__checkbox"
+    class="collection-btn-checkbox" 
   />
-
+<!-- I used checkbox instead of a regular button because it thought it would be easier to toggle on and off and to style -->
   <span class="collection-btn__icon">
-    <span class="icon-plus">+</span>
-    <span class="icon-check">✓</span>
+    <span class="icon-plus">+</span> <!-- plus icon for default state -->
+
+    <span class="icon-check">✓</span> <!-- check icon for added to collection / active-->
   </span>
 
-  <span class="collection-btn__text">
+  <span class="collection-btn-text">
     <span class="text-default">Add to Collection</span>
     <span class="text-active">Added to Collection</span>
   </span>

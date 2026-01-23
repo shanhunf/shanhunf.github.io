@@ -1,33 +1,23 @@
 ---
+
+// Getting 'active' to know which page the user is on
+
 const { active } = Astro.props;
 ---
-
+<!-- Sidenav left side of the page -->
 <nav class="sidebar p-3">
   <h2 class="sidebar-title mb-1">My Record Shelf</h2>
-  <p class="sidebar-subtitle mb-4">X records in your collection</p>
+  <p class="sidebar-subtitle mb-4">X records in your collection</p> <!-- Will use local storage to count the x once albums start being added -->
+
+
+    <!-- Nav list -->
 
   <ul class="nav nav-pills flex-column gap-2">
 
-    <!-- My Collection -->
+     <!-- Search Records -->
     <li class="nav-item">
       <a
         href="/"
-        class={`nav-link sidebar-link d-flex align-items-center gap-3 ${
-          active === "collection" ? "active" : ""
-        }`}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
-          <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-width="16"/>
-          <circle cx="128" cy="128" r="24" fill="none" stroke="currentColor" stroke-width="16"/>
-        </svg>
-        <span>My Collection</span>
-      </a>
-    </li>
-
-    <!-- Search Records -->
-    <li class="nav-item">
-      <a
-        href="/search"
         class={`nav-link sidebar-link d-flex align-items-center gap-3 ${
           active === "search" ? "active" : ""
         }`}
@@ -40,22 +30,23 @@ const { active } = Astro.props;
       </a>
     </li>
 
-    <!-- Stats -->
+    <!-- My Collection -->
     <li class="nav-item">
       <a
-        href="/stats"
+        href="/collection"
         class={`nav-link sidebar-link d-flex align-items-center gap-3 ${
-          active === "stats" ? "active" : ""
+          active === "collection" ? "active" : ""
         }`}
       >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
-          <line x1="48" y1="224" x2="48" y2="128" stroke="currentColor" stroke-width="16"/>
-          <line x1="112" y1="224" x2="112" y2="80" stroke="currentColor" stroke-width="16"/>
-          <line x1="176" y1="224" x2="176" y2="32" stroke="currentColor" stroke-width="16"/>
+          <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-width="16"/>
+          <circle cx="128" cy="128" r="24" fill="none" stroke="currentColor" stroke-width="16"/>
         </svg>
-        <span>My Stats</span>
+        <span>My Collection</span>
       </a>
     </li>
+
+
 
   </ul>
 </nav>

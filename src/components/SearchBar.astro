@@ -8,8 +8,9 @@ const { placeholder = "Search..." } = Astro.props;
     class="search-icon"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 256 256"
-    aria-hidden="true"
+    aria-hidden="true". 
   >
+      <!-- aria tells screen readers to ignore or recognise an icon, hiding it here because it doesnt carry any meaningful info -->
     <circle
       cx="112"
       cy="112"
@@ -36,3 +37,6 @@ const { placeholder = "Search..." } = Astro.props;
     aria-label={placeholder}
   />
 </div>
+
+  <!-- placeholder shows placeholder text in search before user starts typing -->
+  <!-- id is for JS -->

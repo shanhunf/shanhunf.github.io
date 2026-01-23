@@ -1,11 +1,11 @@
 ---
 const { active } = Astro.props;
 ---
-<!-- Default dropup button -->
-<div class="btn-group dropup">
+<!-- Default dropup buttonl using a drop up instead of drop down because I want it to open within the card. Also using drop down because I hope eventually to add more elements like album infp, logging previous listens etc -->
+<div class="btn-group dropup"> <!-- Bootstrap -->
   <button
     type="button"
-    class="btn log-btn__trigger dropdown-toggle"
+    class="btn log-btn-trigger dropdown-toggle"
     data-bs-toggle="dropdown"
     data-bs-display="static"
     aria-expanded="false"

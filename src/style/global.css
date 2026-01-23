@@ -4,19 +4,18 @@
 
 * {
   box-sizing: border-box;
-  margin: 0;
+  margin: 0; /* Remove default margins */
   padding: 0;
 }
 
 html,
 body {
   height: 100%;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Prevent horizontal scrolling (no side-to-side)*/
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: "Segoe UI", sans-serif;
   background-color: #222222;
   color: #ffffff;
 }
@@ -129,7 +128,7 @@ body {
   top: 0;
   z-index: 20;
 
-  background-color: #222222; /* prevents see-through */
+  background-color: #222222; 
   padding-top: 16px;
   padding-bottom: 16px;
 }
@@ -162,7 +161,7 @@ body {
 }
 
 /* ========================= */
-/* BOOTSTRAP CARD RESET */
+/* BOOTSTRAP CARD CSS OVERRIDE */
 /* ========================= */
 
 .card.listenalbum-card,
@@ -211,7 +210,7 @@ body {
   border-radius: 22px 22px 0 0;
 }
 
-.listenalbum-card__image, .collection-card__image {
+.listenalbum-card-image, .collection-card-image {
   position: relative;
 }
 
@@ -219,8 +218,8 @@ body {
 /* info */
 /* ========================= */
 
-.listenalbum-card__meta,
-.collection-card__meta {
+.listenalbum-card-info,
+.collection-card-info {
   padding: 24px 22px 28px;
   background: linear-gradient(
     to bottom,
@@ -232,8 +231,8 @@ body {
   min-height: 120px;
 }
 
-.listenalbum-card__title,
-.collection-card__title {
+.listenalbum-card-title,
+.collection-card-title {
   font-size: 16px;
   font-weight: 600;
   color: #ffffff;
@@ -243,14 +242,14 @@ body {
   text-overflow: ellipsis;
 }
 
-.listenalbum-card__artist,
-.collection-card__artist {
+.listenalbum-card-artist,
+.collection-card-artist {
   font-size: 15px;
   color: #9ca0a8;
 }
 
-.listenalbum-card__image img,
-.collection-card__image img {
+.listenalbum-card-image img,
+.collection-card-image img {
   width: 100%;
   height: 100%;
   aspect-ratio: 1 / 1;
@@ -296,7 +295,7 @@ body {
 .icon-check {
   display: none;
 }
-.collection-btn__checkbox {
+.collection-btn-checkbox {
   position: absolute;
   opacity: 0;
   pointer-events: none;
@@ -306,11 +305,11 @@ body {
   background: rgba(255, 255, 255, 0.75);
 }
 
-.collection-btn__checkbox:checked ~ .collection-btn__text .text-default {
+.collection-btn-checkbox:checked ~ .collection-btn-text .text-default {
   display: none;
 }
 
-.collection-btn__checkbox:checked ~ .collection-btn__text .text-active {
+.collection-btn-checkbox:checked ~ .collection-btn-text .text-active {
   display: inline;
 }
 
@@ -318,11 +317,11 @@ body {
   display: none;
 }
 
-.collection-btn__checkbox:checked ~ .collection-btn__icon .icon-plus {
+.collection-btn-checkbox:checked ~ .collection-btn-icon .icon-plus {
   display: none;
 }
 
-.collection-btn__checkbox:checked ~ .collection-btn__icon .icon-check {
+.collection-btn-checkbox:checked ~ .collection-btn-icon .icon-check {
   display: inline;
 }
 
@@ -332,7 +331,7 @@ body {
 /* COLLECTION BUTTON — CHECKED STATE */
 /* ========================= */
 
-.collection-btn:has(.collection-btn__checkbox:checked) {
+.collection-btn:has(.collection-btn-checkbox:checked) {
   border-radius: 15.398px;
   border: 0.642px solid #DEC5FF;
 
@@ -343,7 +342,7 @@ body {
 }
 
 /* ========================= */
-/* LOG BUTTON (BOOTSTRAP DROPDOWN) */
+/* .LISTENDROPUP */
 /* ========================= */
 
 
@@ -356,7 +355,7 @@ body {
 }
 
 
-.log-btn__trigger {
+.log-btn-trigger {
   width: 100%;
   height: 46px;
   border-radius: 15px;
@@ -372,13 +371,13 @@ body {
 }
 
 
-.log-btn__trigger::after {
+.log-btn-trigger::after {
   display: none;
 }
 
 
-.btn-group.dropup.show .log-btn__trigger,
-.log-btn__trigger:hover {
+.btn-group.dropup.show .log-btn-trigger,
+.log-btn-trigger:hover {
   background: #1f102f;
   color: #ffffff;
 }
@@ -450,12 +449,12 @@ bottom: 100%;
   outline-offset: 4px;
 }
 
-.collection-btn:has(.collection-btn__checkbox:focus-visible) {
+.collection-btn:has(.collection-btn-checkbox:focus-visible) {
   outline: 3px solid #6d5dfc;
   outline-offset: 4px;
 }
 
-.log-btn__trigger:focus-visible {
+.log-btn-trigger:focus-visible {
   outline: 3px solid #6d5dfc;
   outline-offset: 4px;
 }

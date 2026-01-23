@@ -1,23 +1,26 @@
 ---
 import LogBTN from "./ListenDropup.astro";
 
+// This is for the MY COLLECTION PAGE card. Get info from the album card that we will pull from the API
 
 const { title, artist, cover, id } = Astro.props;
 ---
 
-<div class="card listenalbum-card h-100">
-  <div class="listenalbum-card__image">
+<!-- Album card that displays one album with its image and info -->
+<div class="card listenalbum-card h-100"> <!-- using Bootstrap -->
+  <div class="listenalbum-card-image">  <!-- Album cover image -->
     <img
       src={cover}
       alt={`${title} album cover`}
       onerror="this.onerror=null; this.src='/altrecord.jpeg';"
     />
+<!-- adding alt text and images -->
 
-    <LogBTN id={`listen-${id}`} />
+    <LogBTN id={`listen-${id}`} /> <!-- this will be the drop up button, originally named LogBtn in file but it was failing when deploying to github pages so I've renamed the file to ListenDropup but kept the id name LogBTN -->
   </div>
 
-  <div class="listenalbum-card__meta">
-    <h5 class="listenalbum-card__title">{title}</h5>
-    <p class="listenalbum-card__artist">{artist}</p>
+  <div class="listenalbum-card-info">
+    <h5 class="listenalbum-card-title">{title}</h5>  <!-- h5 for album title because I want it to be visually bigger  -->
+    <p class="listenalbum-card-artist">{artist}</p> <!-- artist is a paragraph because visually smaller  -->
   </div>
 </div>
