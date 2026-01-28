@@ -4,7 +4,7 @@ import Sidenav from "../components/Sidenav.astro";
 import SearchBar from "../components/SearchBar.astro";
 ---
 
-<Layout title="Search Records">
+<Layout title="My Records">
   <Sidenav slot="sidenav" active="collection" />
 
   <main slot="content" class="content">
@@ -14,7 +14,7 @@ import SearchBar from "../components/SearchBar.astro";
       <div class="search-sticky">   <!-- Sticky search bar that stays at the top when scrolling -->
   <div class="row mb-4"> <!-- bootstrap -->
     <div class="col-12">
-      <SearchBar placeholder="Search for Records..." />
+      <SearchBar placeholder="Search my Collection..." />
     </div>
   </div>
 </div>
@@ -29,5 +29,7 @@ import SearchBar from "../components/SearchBar.astro";
   </main>
 </Layout>
 
-<script type="module" src="/src/js/search-page.js"></script> <!-- js search file-->
+<script>
+  import "../js/display-collection.js";
+</script> 
 

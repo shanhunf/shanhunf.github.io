@@ -1,7 +1,9 @@
 // API access token from Discogs, making it a constant so I don't have to keep re-entering it https://dev.to/amirfakour/tips-to-use-constants-file-in-typescript-27je also placed the token code in an env file for security https://docs.astro.build/en/guides/environment-variables/
 const DISCOGS_TOKEN = "mxbmGqLkbfkPiMJNwJtDZSAYWVWCTGNMYQaPTTTf";
 
-/* This is so when the search record page loads, its not empty and is populated with albums */
+
+// SEARCH PAGE LOAD
+
 /* Search by genre USED THIS TO HELP CALL API: https://publicapis.io/discogs-api | USED THIS TO LEARN HOW TO USE FETCH: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch */ 
  export async function searchByGenre (genre){ /* use export because I'll be using this function in other files */
 
@@ -21,10 +23,8 @@ try{
     console.error(error.message);
   }
 }
-    
-  
 
-/* This is for Search bar when the user wants to search for specific albums */
+// SEARCH BAR 
 
 export async function searchReleases (query){ /* using query this time to search everything https://www.discogs.com/developers?srsltid=AfmBOoo_o0nuBlMFJ078jVJ7_CJhjSjMBjNsg5pt_WkRvauJOpreEHrm#page:database,header:database-search */
 
