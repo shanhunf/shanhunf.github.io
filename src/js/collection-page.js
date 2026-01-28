@@ -1,5 +1,3 @@
-// IMPORT FUNCTIONS
-import { getCollection, removeFromCollection } from "./collection-page.js";
 
 // GET COLLECTION
 export function getCollection() {
