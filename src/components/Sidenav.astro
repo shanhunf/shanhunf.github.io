@@ -7,7 +7,7 @@ const { active } = Astro.props;
 <!-- Sidenav left side of the page -->
 <nav class="sidebar p-3">
   <h2 class="sidebar-title mb-1">My Record Shelf</h2>
-  <p class="sidebar-subtitle mb-4">X records in your collection</p> <!-- Will use local storage to count the x once albums start being added -->
+  <p class="sidebar-subtitle mb-4" id="sidebar-count">0 Records in Collection</p> <!-- Will use local storage to count the x once albums start being added -->
 
 
     <!-- Nav list -->

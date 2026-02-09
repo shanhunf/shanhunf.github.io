@@ -78,6 +78,14 @@ body {
   box-shadow: none;
 }
 
+.sidebar-subtitle {
+  opacity: 0; /* https://developer.mozilla.org/en-US/docs/Web/CSS/opacity transparency */
+  transition: opacity 0.2s;  /* smooth transition when loaded so it is less glitchy */
+}
+
+.sidebar-subtitle.loaded {
+  opacity: 1;
+}
 /* ========================= */
 /* MAIN CONTENT WHERE ALBUM GRID LIVES */
 /* ========================= */
@@ -481,7 +489,3 @@ bottom: 100%;
   color: white;
   font-weight: bolder;
 }
-
-
-
-
