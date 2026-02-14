@@ -11,6 +11,19 @@ function updateSidebarCount() {
   if (countElement) {
     const count = collection.length; 
     countElement.textContent = `${count} Record${count === 1 ? '' : 's'} in Collection`; //update text to this based on array
-    countElement.classList.add('loaded'); //the line was glitching when the page was loading, this helps it be less glitchy with css
+    countElement.classList.add('loaded'); //use debugger the line was glitching when the page was loading, this helps it be less glitchy with css
   }
 }
+
+
+// W3Schools-style hamburger toggle
+function toggleMenu() {
+  var x = document.getElementById("mobile-nav-links");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+
+window.toggleMenu = toggleMenu;

@@ -4,11 +4,27 @@
 
 const { active } = Astro.props;
 ---
+
+<!-- Mobile top bar — hidden on desktop, shown on mobile -->
+<div class="mobile-topnav" id="mobile-topnav">
+  <span class="mobile-topnav-title">My Record Shelf</span>
+  <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Toggle menu">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16">
+      <line x1="40" y1="64" x2="216" y2="64"/>
+      <line x1="40" y1="128" x2="216" y2="128"/>
+      <line x1="40" y1="192" x2="216" y2="192"/>
+    </svg>
+  </button>
+  <div class="mobile-nav-links" id="mobile-nav-links">
+    <a href="/" class={active === "search" ? "active" : ""}>Search Records</a>
+    <a href="/collection" class={active === "collection" ? "active" : ""}>My Collection</a>
+  </div>
+</div>
+
 <!-- Sidenav left side of the page -->
 <nav class="sidebar p-3">
   <h2 class="sidebar-title mb-1">My Record Shelf</h2>
   <p class="sidebar-subtitle mb-4" id="sidebar-count">0 Records in Collection</p> <!-- Will use local storage to count the x once albums start being added -->
-
 
     <!-- Nav list -->
 
@@ -16,8 +32,8 @@ const { active } = Astro.props;
 
      <!-- Search Records -->
     <li class="nav-item">
-      <a
-        href="/"
+      
+       <a href="/"
         class={`nav-link sidebar-link d-flex align-items-center gap-3 ${
           active === "search" ? "active" : ""
         }`}
@@ -32,12 +48,12 @@ const { active } = Astro.props;
 
     <!-- My Collection -->
     <li class="nav-item">
-      <a
-        href="/collection"
+      
+      <a  href="/collection"
         class={`nav-link sidebar-link d-flex align-items-center gap-3 ${
           active === "collection" ? "active" : ""
         }`}
-      >
+>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
           <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-width="16"/>
           <circle cx="128" cy="128" r="24" fill="none" stroke="currentColor" stroke-width="16"/>
@@ -46,7 +62,7 @@ const { active } = Astro.props;
       </a>
     </li>
 
-
-
   </ul>
 </nav>
+
+

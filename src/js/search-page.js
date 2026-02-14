@@ -121,6 +121,13 @@ grid.addEventListener('click', (event) => {
       checkbox.checked = true; // Manually check
       console.log('Added:', albumData.id);
     }
+    // Update sidebar count
+    const collection = getCollection();
+    const countElement = document.getElementById('sidebar-count');
+    if (countElement) {
+      const count = collection.length;
+      countElement.textContent = `${count} Record${count === 1 ? '' : 's'} in Collection`;
+    }
   }
 });
 });

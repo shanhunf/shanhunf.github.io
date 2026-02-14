@@ -14,12 +14,15 @@ document.addEventListener("DOMContentLoaded", () => { /* same page load as in se
   // DISPLAY SAVED ALBUMS
   function displayCollection() {
     const collection = getCollection();
+    const emptyState = document.getElementById('empty-state');
     grid.innerHTML = '';
 
     if (collection.length === 0) {
-      grid.innerHTML = '<p>No albums in your collection yet. Go add some!</p>';
+      if (emptyState) emptyState.style.display = 'flex';
       return;
     }
+
+    if (emptyState) emptyState.style.display = 'none';
 
     collection.forEach(album => { /* drop up button*/
       grid.innerHTML += ` 
@@ -55,6 +58,25 @@ document.addEventListener("DOMContentLoaded", () => { /* same page load as in se
           </div>
         </div>
       `;
+    });
+  }
+
+  // SEARCH COLLECTION, using display none to filter the cards that isnt in the search https://www.w3schools.com/howto/howto_js_filter_lists.asp
+  if (input) {
+    input.addEventListener('input', (event) => {
+      const query = event.target.value.trim().toLowerCase(); // makes the search case-insensitive. Without it, if typed "taylor" it wouldn't match "Taylor Swift" because lowercase t doesn't equal uppercase T.
+      const cards = grid.querySelectorAll('.col');
+
+      cards.forEach(card => {
+        const title = card.querySelector('.collection-card-title')?.textContent.toLowerCase() || '';
+        const artist = card.querySelector('.collection-card-artist')?.textContent.toLowerCase() || '';
+
+        if (!query || title.includes(query) || artist.includes(query)) {
+          card.style.display = '';
+        } else {
+          card.style.display = 'none';
+        }
+      });
     });
   }
 
