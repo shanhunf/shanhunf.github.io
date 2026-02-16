@@ -8,7 +8,7 @@ import SearchBar from "../components/SearchBar.astro";
   <Sidenav slot="sidenav" active="collection" />
 
   <main slot="content" class="content">
-    <section class="content-body">
+    <div class="content-body">
 
       <div class="search-sticky">   <!-- Sticky search bar that stays at the top when scrolling -->
   <div class="row mb-4"> <!-- bootstrap -->
@@ -17,6 +17,7 @@ import SearchBar from "../components/SearchBar.astro";
     </div>
   </div>
 </div>
+
 
  <!-- empty grid that js will fill with album cards -->
       <div
@@ -35,7 +36,7 @@ import SearchBar from "../components/SearchBar.astro";
         <a href="/" class="empty-state-btn">Add Your First Record</a>
       </div>
 
-    </section>
+   </div>
   </main>
 </Layout>
 
