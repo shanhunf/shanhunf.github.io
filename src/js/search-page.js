@@ -28,9 +28,8 @@ document.addEventListener("DOMContentLoaded", async () => { // Listen for user t
     grid.innerHTML = '';
     albumsArray.slice(0, 30).forEach(album => { /* i only want to show 30 albums because i dont want to overload the page https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice */
 
-      const parts = album.title.split(' - ');
-      const artist = parts[0] || 'Unknown Artist'; // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split I need to split the artist & album title because without this artist is being returned as undefined & the artist & album are being displayed in the title, I want them to be on different lines
-      const albumTitle = parts[1] || album.title;
+      const artist = album.artist || 'Unknown Artist';
+      const albumTitle = album.title;
       const isAlreadySaved = isInCollection(album.id);
       console.log(`Album: ${albumTitle}, ID: ${album.id}, isAlreadySaved: ${isAlreadySaved}`); 
 
@@ -45,7 +44,8 @@ document.addEventListener("DOMContentLoaded", async () => { // Listen for user t
               <img src="${album.cover_image}" alt="${album.title}" /> 
 
               <!-- ADD TO COLLECTION BUTTON --> 
-              <label class="collection-btn" 
+              <label class="collection-btn"
+                tabindex="0" 
                 data-album-id="${album.id}" 
                 data-album-title="${albumTitle}" 
                 data-album-artist="${artist}" 
@@ -127,6 +127,16 @@ grid.addEventListener('click', (event) => {
     if (countElement) {
       const count = collection.length;
       countElement.textContent = `${count} Record${count === 1 ? '' : 's'} in Collection`;
+    }
+  }
+});
+// Enter wasn't working on add to collection button when using keyboard, added an enter event key 
+grid.addEventListener('keydown', (event) => {
+  if (event.key === 'Enter') {
+    const button = event.target.closest('.collection-btn');
+    if (button) {
+      event.preventDefault();
+      button.click();
     }
   }
 });

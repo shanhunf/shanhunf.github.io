@@ -30,3 +30,13 @@ export function isInCollection(albumId) {
     const collection = getCollection();
     return collection.some(album => String(album.id) === String(albumId)); /* Adding strings here because without it it was failing to match correct albums */
 }
+
+// LOG A LISTEN — adds 1 to the album's listen count
+export function logListen(albumId) {
+  const collection = getCollection();
+  const album = collection.find(a => String(a.id) === String(albumId));
+  if (album) {
+    album.listenCount = (album.listenCount || 0) + 1; // if no count yet, start at 0 then add 1
+    localStorage.setItem('collectalbum', JSON.stringify(collection));
+  }
+}

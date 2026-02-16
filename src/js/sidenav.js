@@ -16,7 +16,7 @@ function updateSidebarCount() {
 }
 
 
-// W3Schools-style hamburger toggle
+// W3Schools-style hamburger toggle https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar
 function toggleMenu() {
   var x = document.getElementById("mobile-nav-links");
   if (x.style.display === "block") {

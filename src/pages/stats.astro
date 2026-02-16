@@ -3,10 +3,27 @@ import Layout from "../layouts/Layout.astro";
 import Sidenav from "../components/Sidenav.astro";
 ---
 
-<Layout title="Stats">
-
-  <!-- LEFT COLUMN -->
+<Layout title="My Stats">
   <Sidenav slot="sidenav" active="stats" />
 
+  <main slot="content" class="content">
+    <section class="content-body">
 
+      <div class="stats-header">
+        <h1 class="stats-title">Most Listened</h1>
+        <p class="stats-subtitle">Your top 10 most played records</p>
+      </div>
+
+      <!-- Grid that JS will fill with top listened albums -->
+      <div
+        id="stats-grid"
+        class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4"
+      ></div>
+
+    </section>
+  </main>
 </Layout>
+
+<script>
+  import "../js/stats-page.js";
+</script>

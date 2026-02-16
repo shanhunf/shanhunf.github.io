@@ -18,6 +18,7 @@ const { active } = Astro.props;
   <div class="mobile-nav-links" id="mobile-nav-links">
     <a href="/" class={active === "search" ? "active" : ""}>Search Records</a>
     <a href="/collection" class={active === "collection" ? "active" : ""}>My Collection</a>
+    <a href="/stats" class={active === "stats" ? "active" : ""}>Most Listened</a>
   </div>
 </div>
 
@@ -33,7 +34,7 @@ const { active } = Astro.props;
      <!-- Search Records -->
     <li class="nav-item">
       
-       <a href="/"
+      <a  href="/"
         class={`nav-link sidebar-link d-flex align-items-center gap-3 ${
           active === "search" ? "active" : ""
         }`}
@@ -49,11 +50,11 @@ const { active } = Astro.props;
     <!-- My Collection -->
     <li class="nav-item">
       
-      <a  href="/collection"
+       <a href="/collection"
         class={`nav-link sidebar-link d-flex align-items-center gap-3 ${
           active === "collection" ? "active" : ""
         }`}
->
+      >
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
           <circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-width="16"/>
           <circle cx="128" cy="128" r="24" fill="none" stroke="currentColor" stroke-width="16"/>
@@ -62,7 +63,20 @@ const { active } = Astro.props;
       </a>
     </li>
 
+    <!-- Most Listened -->
+    <li class="nav-item">
+      
+       <a href="/stats"
+        class={`nav-link sidebar-link d-flex align-items-center gap-3 ${
+          active === "stats" ? "active" : ""
+        }`}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 256 256">
+          <polygon points="128,24 160,96 240,104 176,160 192,240 128,200 64,240 80,160 16,104 96,96" fill="none" stroke="currentColor" stroke-width="16"/>
+        </svg>
+        <span>Most Listened</span>
+      </a>
+    </li>
+
   </ul>
 </nav>
-
-
