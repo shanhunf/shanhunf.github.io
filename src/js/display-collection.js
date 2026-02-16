@@ -29,7 +29,10 @@ document.addEventListener("DOMContentLoaded", () => { /* same page load as in se
         <div class="col">
           <div class="collection-card h-100">
             <div class="collection-card-image">
-              <img src="${album.image}" alt="${album.title}" /> 
+              <img 
+              src="${album.image}" 
+              alt="${album.title}"
+              loading="lazy" /> 
 
               <!-- LOG BUTTON DROPDOWN -->
               <div class="btn-group dropup">

@@ -20,6 +20,18 @@ import Sidenav from "../components/Sidenav.astro";
         class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-4"
       ></div>
 
+
+      <!-- Empty state, hidden when albums get populated -->
+      <div id="empty-state" class="empty-state">
+        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 256 256" fill="none" stroke="#9a9a9a" stroke-width="12">
+          <circle cx="128" cy="128" r="96"/>
+          <circle cx="128" cy="128" r="24"/>
+        </svg>
+        <h3>No Records Yet</h3>
+        <p>You haven't added any records yet.</p>
+        <a href="/" class="empty-state-btn">Add Your First Record</a>
+      </div>
+      
     </section>
   </main>
 </Layout>

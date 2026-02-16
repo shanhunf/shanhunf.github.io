@@ -41,7 +41,10 @@ document.addEventListener("DOMContentLoaded", async () => { // Listen for user t
         <div class="col">
           <div class="collection-card h-100"> <!-- using Bootstrap -->
             <div class="collection-card-image"> <!-- Album cover image -->
-              <img src="${album.cover_image}" alt="${album.title}" /> 
+              <img src="${album.cover_image}" 
+              alt="${album.title}"
+                loading="lazy"
+               /> 
 
               <!-- ADD TO COLLECTION BUTTON --> 
               <label class="collection-btn"

@@ -2,6 +2,7 @@ import { getCollection } from "./collection-page.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const grid = document.getElementById("stats-grid");
+  const emptyState = document.getElementById('empty-state');
 
   if (!grid) return;
 
@@ -17,6 +18,13 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.innerHTML = '<p>No listens logged yet. Go listen to some records!</p>';
     return;
   }
+
+  if (listened.length === 0) {
+    if (emptyState) emptyState.style.display = 'flex';
+    return;
+  }
+
+  if (emptyState) emptyState.style.display = 'none';
 
   listened.forEach(album => {  // displaying albums on stats page, show the collection card and the API details
     grid.innerHTML += `
