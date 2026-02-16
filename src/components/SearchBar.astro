@@ -2,7 +2,8 @@
 const { placeholder = "Search..." } = Astro.props;
 ---
 
-<div class="search-bar">
+<form role="search" class="search-bar">
+  <label for="search-input" class="visually-hidden"></label>
   <!-- Icon -->
   <svg
     class="search-icon"
