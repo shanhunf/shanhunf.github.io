@@ -15,11 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     .slice(0, 10);
 
   if (listened.length === 0) {
-    grid.innerHTML = '<p>No listens logged yet. Go listen to some records!</p>';
-    return;
-  }
-
-  if (listened.length === 0) {
     if (emptyState) emptyState.style.display = 'flex';
     return;
   }
