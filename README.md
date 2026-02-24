@@ -32,7 +32,7 @@ Clone the repository
 
 ```
 git clone https://github.com/shanhunf/shanhunf.github.io.git
-cd my-record-shelf
+cd shanhunf.github.io
 ```
 
 Install dependencies
