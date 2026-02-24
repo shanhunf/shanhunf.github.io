@@ -33,7 +33,7 @@ A step by step series of examples that tell you how to get a development env run
 Clone the repository
 
 ```
-git clone https://github.com/shanhunf/my-record-shelf.git
+git clone https://github.com/shanhunf/shanhunf.github.io.git
 cd my-record-shelf
 ```
 
