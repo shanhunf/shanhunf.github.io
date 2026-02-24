@@ -180,7 +180,7 @@ This project uses Git for version control with regular commits and descriptive m
 
 ## Acknowledgments
 
-* <b>Note on AI usage:</b> Throughout this project I used AI tools as learning aids alongside documentation and tutorials. Where AI helped me solve a specific problem, I've noted it above. All code was written and adapted by me.
+* <b>Note on AI usage:</b> Throughout this project I used AI tools (ChatGPT & Claude) as learning aids alongside documentation and tutorials. Where AI helped me solve a specific problem, I've noted it above. All code was written and adapted by me.
 * <b> W3Schools: JSON Parse</b> https://www.w3schools.com/js/js_json_parse.asp
 * <b> W3Schools: Async Function </b> https://www.w3schools.com/js/js_async.asp
 * <b>W3Schools: How To Mobile Navigation: </b> https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar
