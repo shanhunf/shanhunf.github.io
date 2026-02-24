@@ -28,8 +28,6 @@ Astro Installation Docs https://docs.astro.build/en/install-and-setup/
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
-
 Clone the repository
 
 ```
