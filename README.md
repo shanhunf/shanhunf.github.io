@@ -33,8 +33,8 @@ A step by step series of examples that tell you how to get a development env run
 Clone the repository
 
 ```
-git clone https://github.com/shanhunf/my-record-shelf.git
-cd my-record-shelf
+git clone https://github.com/shanhunf/shanhunf.github.io.git
+cd shanhunf.github.io
 ```
 
 Install dependencies
@@ -51,7 +51,7 @@ Open your browser and go to
 ```
 http://localhost:4321
 ```
-You should see the Search Records page with rock/pop albums preloaded from the iTunes API. Try searching for an artist, adding albums to your collection, and logging a listen to see the stats page populate.
+You should see the Search Records page with rock/pop albums preloaded from the iTunes API. The collection starts empty and the preloaded albums on the Search page are just search results, not saved records. Try searching for an artist, adding albums to your collection, and logging a listen to see the stats page populate.
 
 ## Project Structure
 
@@ -182,7 +182,7 @@ This project uses Git for version control with regular commits and descriptive m
 
 ## Acknowledgments
 
-* <b>Note on AI usage:</b> Throughout this project I used AI tools as learning aids alongside documentation and tutorials. Where AI helped me solve a specific problem, I've noted it above. All code was written and adapted by me.
+* <b>Note on AI usage:</b> Throughout this project I used AI tools (ChatGPT & Claude) as learning aids alongside documentation and tutorials. Where AI helped me solve a specific problem, I've noted it above. All code was written and adapted by me.
 * <b> W3Schools: JSON Parse</b> https://www.w3schools.com/js/js_json_parse.asp
 * <b> W3Schools: Async Function </b> https://www.w3schools.com/js/js_async.asp
 * <b>W3Schools: How To Mobile Navigation: </b> https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_mobile_navbar
