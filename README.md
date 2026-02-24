@@ -2,7 +2,7 @@
 
 This is a vinyl collection tracker built for the UCD Professional Academy Diploma in Front-End Web Development. This application allows you to search for albums using the iTunes Search API, build your personal collection, log your listening activity, and see your most played records. 
 
-<img src="/Users/shannon.foy/Documents/myproject/ucd-project/src/assets/Screenshot 2026-02-23 at 13.35.23.png" alt="My Record Hub">
+<img src="/src/assets/Screenshot 2026-02-23 at 13.35.23.png" alt="My Record Hub">
 
 * Live site: https://shanhunf.github.io/
 * Figma designs: https://www.figma.com/design/qINYoVgUuRKIfKLE9ni4wY/ucd-project?node-id=0-1&t=bl7fBR64G933d9ow-1
@@ -27,8 +27,6 @@ This is a vinyl collection tracker built for the UCD Professional Academy Diplom
 Astro Installation Docs https://docs.astro.build/en/install-and-setup/
 
 ### Installing
-
-A step by step series of examples that tell you how to get a development env running
 
 Clone the repository
 
